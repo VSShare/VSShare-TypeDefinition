@@ -6,14 +6,6 @@
 	Common Types
 */
 
-declare const enum ContentType {
-	PlainText = 0,
-	CSharp = 1,
-	VB_NET = 2,
-	XML = 3,
-	JSON = 4
-}
-
 interface UpdateContentData {
 	data: Line[],
 	type: UpdateType,
@@ -84,7 +76,7 @@ interface AuthorizeListenerResponse {
 
 interface AppendSessionRequest {
 	filename: string;
-	type: ContentType;
+	type: string;
 }
 
 interface AppendSessionResponse {
@@ -107,7 +99,7 @@ interface UpdateSessionCursorRequest extends SessionRequestBase {
 
 interface UpdateSessionInfoRequest extends SessionRequestBase {
 	filename: string;
-	type: ContentType;
+	type: string;
 }
 
 /* 
@@ -130,7 +122,7 @@ interface GetSessionRequest extends SessionRequestBase {
 interface AppendSessionNotification {
 	id: string;
 	filename: string;
-	type: ContentType;
+	type: string;
 	owner_name: string;	
 }
 
